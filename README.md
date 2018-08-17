@@ -4,9 +4,13 @@ While Parcel works out of the box with POSTCSS, and with Stylus too to some exte
 # Solution
 The solution to date is to create a separate environment (folder system) for Stylus to work in, and let Parcel take over for the final build.
 Parcel, Stylus and, wherever possible, Stylus extensions are installed globally
-Scripts to run Parcel and Stylus c/w entensions are added to the package.json, along with a script to run all
+
 # About the stylus scripts & extensions
-One script adds vendor prefixes and outputs to  void.css: used to check prefixes are being added. This file is then redundant
-The other script adds vendor prefixes and compresses ready for parcel to collect and add to the dist folder
-# Building
-All the building is done in the src folder. The index.styl imports all modules from the "styls" folder
+Scripts to run Parcel and Stylus c/w extensions are added to the package.json, along with a script to run all
+stylus: compiles styl to css and adds vendor prefixes using nib
+parcels: is created to run the parcel live server
+start: runs the two above
+# Construction
+All the construction is done in the src folder. The index.styl imports all modules from the "styls" folder. From here Parcel takes over and creates/updates the dist folder
+# Final build
+Run: "parcel build src/index.html" minifies html, css and js. Currently having to remove the forward slash '/' from the links to external style and js sheets
