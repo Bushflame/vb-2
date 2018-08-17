@@ -22,14 +22,14 @@ All the construction is done in the src folder. The index.styl imports all modul
 Run: "parcel build src/index.html" minifies html, css and js. Currently having to remove the forward slash '/' from the links to external style and js sheets
 
 ## Usage
-from the command line  
-    - npm install parcel-bundler -g
-    - npm install stylus -g
-    - clone this repo - git clone  https://github.com/Bushflame/parcel-stylus-bp.git
-    - Change directory - cd parcel-stylus-bp
-    - initialize -  npm init
-    - install dependencies - npm install
-    - start the server - npm run start
+from the command line    
+    npm install parcel-bundler -g  
+    npm install stylus -g  
+    clone this repo - git clone  https://github.com/Bushflame/parcel-stylus-bp.git  
+    Change directory - cd parcel-stylus-bp  
+    initialize -  npm init  
+    install dependencies - npm install  
+    start the server - npm run start  
 The dist folder and files will now have been created and you should have a live server up and running on localhost:1234  
-Rather than navigate in the bwser, you can click on the live link in cli...  
+Rather than navigate in the browser, you can click on the live link in cli...  
 server running at http://localhost:1234
