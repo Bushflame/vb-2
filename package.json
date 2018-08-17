@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "stylus": "stylus -u nib -w src/index.styl -o src/index.css",
-    "void": "stylus -u nib -w src/index.styl -o src/void.css",
     "parcels": "parcel src/index.html",
     "start": "npm run stylus & npm run parcels"
   },
