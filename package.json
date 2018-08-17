@@ -6,13 +6,17 @@
   "scripts": {
     "stylus": "stylus -u nib -w src/index.styl -o src/index.css",
     "parcels": "parcel src/index.html",
-    "start": "npm run stylus & npm run parcels"
+    "start": "npm run parcels & npm run stylus"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bushflame/parcel-stylus-bp.git"
   },
-  "keywords": ["parcel","stylus","nib"],
+  "keywords": [
+    "parcel",
+    "stylus",
+    "nib"
+  ],
   "author": "David F. Glover",
   "license": "MIT",
   "dependencies": {
