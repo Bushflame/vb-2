@@ -13,13 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/Bushflame/parcel-stylus-bp.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Bushflame/parcel-stylus-bp/issues"
-  },
-  "homepage": "https://github.com/Bushflame/parcel-stylus-bp#readme",
+  "keywords": ["parcel","stylus","nib"],
+  "author": "David F. Glover",
+  "license": "MIT",
   "dependencies": {
     "src": "^1.1.2"
   },

@@ -29,10 +29,19 @@ body {
   background: -o-linear-gradient(top left, #008000, #87ceeb);
   background: -ms-linear-gradient(top left, #008000, #87ceeb);
   background: linear-gradient(to bottom right, #008000, #87ceeb);
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 h1 {
   text-align: center;
   font-size: 8rem;
   color: #000;
-  text-shadow: 2px 2px 14px;
+  text-shadow: 2px 2px 14px #fff;
+}
+#caption {
+  font-size: 2rem;
 }
