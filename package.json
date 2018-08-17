@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "stylus": "stylus -u nib -w src/index.styl --compress -o src/index.css",
+    "stylus": "stylus -u nib -w src/index.styl -o src/index.css",
     "void": "stylus -u nib -w src/index.styl -o src/void.css",
     "parcels": "parcel src/index.html",
-    "start": "npm run stylus & npm run void & npm run parcels"
+    "start": "npm run stylus & npm run parcels"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Bushflame/parcel-stylus-bp#readme",
   "dependencies": {
     "src": "^1.1.2"
+  },
+  "devDependencies": {
+    "cssnano": "^4.0.5"
   }
 }
