@@ -1,9 +1,21 @@
 // require('./scripts/temp.js')
 import {addText} from './scripts/temp.js';
-import {smoothscroll} from './scripts/smoothscroll.js';
-// require('./scripts/smoothscroll.js')
+require('./scripts/smooth.js')
+require('./scripts/navbar.js')
 require ('./index.css');
-
-
 addText()
-smoothscroll()
+
+
+
+ function myFunction() {
+    const menuIcon = document.querySelector('.menuIcon').addEventListener(click);
+
+    showMenu = function(){
+        var x = document.getElementById("nav");
+        if (x.className === "mainNav") {
+            x.className += "responsive";
+        } else {
+            x.className = "MainNav";
+        }
+    }
+}

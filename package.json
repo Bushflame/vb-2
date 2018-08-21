@@ -10,7 +10,6 @@
   },
   "repository": {
     "type": "git"
-
   },
   "keywords": [
     "parcel",
@@ -20,6 +19,7 @@
   "author": "David F. Glover",
   "license": "MIT",
   "dependencies": {
+    "jquery": "^3.3.1",
     "src": "^1.1.2"
   },
   "devDependencies": {

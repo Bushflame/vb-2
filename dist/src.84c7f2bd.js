@@ -116,151 +116,90 @@ Object.defineProperty(exports, "__esModule", {
 var addText = exports.addText = function addText() {
   document.getElementById('caption').innerText = 'The Sweet Taste of Parcel and Stylus';
 };
-},{}],"scripts/smoothscroll.js":[function(require,module,exports) {
-'use strict';
+},{}],"scripts/smooth.js":[function(require,module,exports) {
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-/* Smooth scrolling
-   Changes links that link to other parts of this page to scroll
-   smoothly to those links rather than jump to them directly, which
-   can be a little disorienting.
+var html, body;
 
-   sil, http://www.kryogenix.org/
+window.onload = function () {
+  //getting all anchor elements
+  var links = document.links;
 
-   v1.0 2003-11-11
-   v1.1 2005-06-16 wrap it up in an object
-*/
-var smoothscroll = exports.smoothscroll = function smoothscroll() {
-  var ss = {
-    fixAllLinks: function fixAllLinks() {
-      // Get a list of all links in the page
-      var allLinks = document.getElementsByTagName('a');
-      // Walk through the list
-      for (var i = 0; i < allLinks.length; i++) {
-        var lnk = allLinks[i];
-        if (lnk.href && lnk.href.indexOf('#') != -1 && (lnk.pathname == location.pathname || '/' + lnk.pathname == location.pathname) && lnk.search == location.search) {
-          // If the link is internal to the page (begins in #)
-          // then attach the smoothScroll function as an onclick
-          // event handler
-          ss.addEvent(lnk, 'click', ss.smoothScroll);
+  //getting html
+  html = document.documentElement;
+
+  //getting body
+  body = document.body;
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].onclick = function () {
+      //getting current scroll position
+      var scrollTop = Math.round(body.scrollTop || html.scrollTop);
+      if (this.hash !== "") {
+        //preventing default anchor click behavior
+        event.preventDefault();
+
+        //getting element with id found in hash
+        var hashElement = document.getElementById(this.hash.substring(1));
+
+        var hashElementTop = 0;
+        var obj = hashElement;
+        while (obj.offsetParent) {
+          hashElementTop += obj.offsetTop;
+          obj = obj.offsetParent;
         }
+        //getting element's position
+        hashElementTop = Math.round(hashElementTop);
+
+        scroll(scrollTop, hashElementTop, this.hash);
       }
-    },
-
-    smoothScroll: function smoothScroll(e) {
-      // This is an event handler; get the clicked on element,
-      // in a cross-browser fashion
-      if (window.event) {
-        target = window.event.srcElement;
-      } else if (e) {
-        target = e.target;
-      } else return;
-
-      // Make sure that the target is an element, not a text node
-      // within an element
-      if (target.nodeName.toLowerCase() != 'a') {
-        target = target.parentNode;
-      }
-
-      // Paranoia; check this is an A tag
-      if (target.nodeName.toLowerCase() != 'a') return;
-
-      // Find the <a name> tag corresponding to this href
-      // First strip off the hash (first character)
-      anchor = target.hash.substr(1);
-      // Now loop all A tags until we find one with that name
-      var allLinks = document.getElementsByTagName('a');
-      var destinationLink = null;
-      for (var i = 0; i < allLinks.length; i++) {
-        var lnk = allLinks[i];
-        if (lnk.name && lnk.name == anchor) {
-          destinationLink = lnk;
-          break;
-        }
-      }
-      if (!destinationLink) destinationLink = document.getElementById(anchor);
-
-      // If we didn't find a destination, give up and let the browser do
-      // its thing
-      if (!destinationLink) return true;
-
-      // Find the destination's position
-      var destx = destinationLink.offsetLeft;
-      var desty = destinationLink.offsetTop;
-      var thisNode = destinationLink;
-      while (thisNode.offsetParent && thisNode.offsetParent != document.body) {
-        thisNode = thisNode.offsetParent;
-        destx += thisNode.offsetLeft;
-        desty += thisNode.offsetTop;
-      }
-
-      // Stop any current scrolling
-      clearInterval(ss.INTERVAL);
-
-      cypos = ss.getCurrentYPos();
-
-      ss_stepsize = parseInt((desty - cypos) / ss.STEPS);
-      ss.INTERVAL = setInterval('ss.scrollWindow(' + ss_stepsize + ',' + desty + ',"' + anchor + '")', 10);
-
-      // And stop the actual click happening
-      if (window.event) {
-        window.event.cancelBubble = true;
-        window.event.returnValue = false;
-      }
-      if (e && e.preventDefault && e.stopPropagation) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    },
-
-    scrollWindow: function scrollWindow(scramount, dest, anchor) {
-      wascypos = ss.getCurrentYPos();
-      isAbove = wascypos < dest;
-      window.scrollTo(0, wascypos + scramount);
-      iscypos = ss.getCurrentYPos();
-      isAboveNow = iscypos < dest;
-      if (isAbove != isAboveNow || wascypos == iscypos) {
-        // if we've just scrolled past the destination, or
-        // we haven't moved from the last scroll (i.e., we're at the
-        // bottom of the page) then scroll exactly to the link
-        window.scrollTo(0, dest);
-        // cancel the repeating timer
-        clearInterval(ss.INTERVAL);
-        // and jump to the link directly so the URL's right
-        location.hash = anchor;
-      }
-    },
-
-    getCurrentYPos: function getCurrentYPos() {
-      if (document.body && document.body.scrollTop) return document.body.scrollTop;
-      if (document.documentElement && document.documentElement.scrollTop) return document.documentElement.scrollTop;
-      if (window.pageYOffset) return window.pageYOffset;
-      return 0;
-    },
-
-    addEvent: function addEvent(elm, evType, fn, useCapture) {
-      // addEvent and removeEvent
-      // cross-browser event handling for IE5+,  NS6 and Mozilla
-      // By Scott Andrew
-      if (elm.addEventListener) {
-        elm.addEventListener(evType, fn, useCapture);
-        return true;
-      } else if (elm.attachEvent) {
-        var r = elm.attachEvent("on" + evType, fn);
-        return r;
-      } else {
-        alert("Handler could not be removed");
-      }
-    }
-  };
-
-  ss.STEPS = 25;
-
-  ss.addEvent(window, "load", ss.fixAllLinks);
+    };
+  }
 };
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+
+function scroll(from, to, hash) {
+  var timeInterval = 0.0002; //in ms
+  var prevScrollTop;
+  var increment = to > from ? 10 : -10;
+
+  var scrollByPixel = setInterval(function () {
+    //getting current scroll position
+    var scrollTop = Math.round(body.scrollTop || html.scrollTop);
+
+    if (prevScrollTop == scrollTop || to > from && scrollTop >= to || to < from && scrollTop <= to) {
+      clearInterval(scrollByPixel);
+      //Add hash to the url after scrolling
+      window.location.hash = hash;
+    } else {
+      body.scrollTop += increment;
+      html.scrollTop += increment;
+
+      prevScrollTop = scrollTop;
+    }
+  }, timeInterval);
+}
+},{}],"scripts/navbar.js":[function(require,module,exports) {
+function myFunction() {
+    var menuIcon = document.querySelector('.menuIcon').addEventListener(click, showMenu);
+
+    showMenu = function showMenu() {
+        var x = document.getElementById("nav");
+        if (x.className === "mainNav") {
+            x.className += "responsive";
+        } else {
+            x.className = "MainNav";
+        }
+    };
+}
+
+// function myFunction() {
+//     var x = document.getElementById("myTopnav");
+//     if (x.className === "topnav") {
+//         x.className += " responsive";
+//     } else {
+//         x.className = "topnav";
+//     }
+// }
+},{}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -290,7 +229,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -321,25 +260,35 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.css":[function(require,module,exports) {
+},{"./bundle-url":"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.css":[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"_css_loader":"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
 var _temp = require('./scripts/temp.js');
 
-var _smoothscroll = require('./scripts/smoothscroll.js');
+require('./scripts/smooth.js'); // require('./scripts/temp.js')
 
-// require('./scripts/smoothscroll.js')
-// require('./scripts/temp.js')
+require('./scripts/navbar.js');
 require('./index.css');
-
 (0, _temp.addText)();
-(0, _smoothscroll.smoothscroll)();
-},{"./scripts/temp.js":"scripts/temp.js","./scripts/smoothscroll.js":"scripts/smoothscroll.js","./index.css":"index.css"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+function myFunction() {
+    var menuIcon = document.querySelector('.menuIcon').addEventListener(click);
+
+    showMenu = function showMenu() {
+        var x = document.getElementById("nav");
+        if (x.className === "mainNav") {
+            x.className += "responsive";
+        } else {
+            x.className = "MainNav";
+        }
+    };
+}
+},{"./scripts/temp.js":"scripts/temp.js","./scripts/smooth.js":"scripts/smooth.js","./scripts/navbar.js":"scripts/navbar.js","./index.css":"index.css"}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -368,7 +317,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '34937' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '45531' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -509,5 +458,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/src.84c7f2bd.map

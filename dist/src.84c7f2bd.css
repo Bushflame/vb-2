@@ -12,7 +12,7 @@ body {
   position: fixed;
   width: 100%;
   background: #87ceeb;
-  height: 2rem;
+  height: 3rem;
 }
 .liner {
   display: -webkit-box;
@@ -71,6 +71,10 @@ body {
   background-color: #fff;
   margin: 0.3rem auto;
   width: 85%;
+}
+.responsive {
+  display: block;
+  background: #ff0;
 }
 .wrapper {
   display: -webkit-box;
