@@ -1,0 +1,40 @@
+.navWrap
+  position fixed
+  width 100%
+  background skyblue
+  height 2rem
+
+.liner
+  display flex
+  justify-content space-between
+  height 100%
+  align-items center
+  margin auto
+  max-width 800px
+  .mainNav
+    display none
+    @media (min-width: 720px)
+      display block
+      ul
+        li
+          display inline-block
+          padding 0 .3rem
+          a
+            color #fff
+            text-decoration none
+
+.menuIcon
+  border-radius:.2rem;
+  width:2.4rem;
+  border:.05rem solid #fff;
+  position:absolute;
+  top:.6rem;
+  right:.6rem;
+  @media (min-width: 720px)
+     display none
+
+.icon-bar
+  height: .3rem;
+  background-color: #fff;
+  margin: .3rem auto;
+  width:85%;

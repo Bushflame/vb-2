@@ -8,6 +8,70 @@ html {
 body {
   height: 100%;
 }
+.navWrap {
+  position: fixed;
+  width: 100%;
+  background: #87ceeb;
+  height: 2rem;
+}
+.liner {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  height: 100%;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: auto;
+  max-width: 800px;
+}
+.liner .mainNav {
+  display: none;
+}
+@media (min-width: 720px) {
+  .liner .mainNav {
+    display: block;
+  }
+  .liner .mainNav ul li {
+    display: inline-block;
+    padding: 0 0.3rem;
+  }
+  .liner .mainNav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.menuIcon {
+  border-radius: 0.2rem;
+  width: 2.4rem;
+  border: 0.05rem solid #fff;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+}
+@media (min-width: 720px) {
+  .menuIcon {
+    display: none;
+  }
+}
+.icon-bar {
+  height: 0.3rem;
+  background-color: #fff;
+  margin: 0.3rem auto;
+  width: 85%;
+}
 .wrapper {
   display: -webkit-box;
   display: -moz-box;
