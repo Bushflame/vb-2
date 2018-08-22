@@ -12,8 +12,9 @@
   margin auto
   max-width 800px
   .mainNav
-    display none
+
     @media (min-width: 720px)
+      opacity 1
       display block
       ul
         li
@@ -39,16 +40,28 @@
   margin: .3rem auto;
   width:85%;
 
-.responsive
-    display block
-    background yellow
-
-.show
-  display block
+@media(max-width:720px)
+    .show
+      opacity 1
+      display block
+      position fixed
+      top 3rem
+      left 0
+      width 100%
+      background skyblue
+      ul
+          li
+              padding-bottom 1rem
+              a
+                  text-decoration none
+                  font-size 1.1rem
+                  color #fff
+                  padding-top 2rem
 
 
 .hide
   display none
+
   // .visible
   //   background:$special;
   //   color:#fff;
@@ -58,3 +71,6 @@
 	// margin:0;
 	// padding-top:2rem;
 	// width:100%;
+.temporary
+    background transparent
+    margin-top 2rem

@@ -103,20 +103,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"scripts/temp.js":[function(require,module,exports) {
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-// addText = function(){
-//   document.getElementById('caption').innerText = 'The Sweetness of Parcel and Stylus'
-// }
-var addText = exports.addText = function addText() {
-  document.getElementById('caption').innerText = 'The Sweet Taste of Parcel and Stylus';
-};
-},{}],"scripts/navbar.js":[function(require,module,exports) {
+})({"scripts/navbar.js":[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -124,41 +111,22 @@ Object.defineProperty(exports, "__esModule", {
 });
 var myFunction = exports.myFunction = function myFunction() {
     var menuIcon = document.getElementById('openMenu').addEventListener("click", function () {
-        var show = document.getElementById('caption');
-        if (show.className === 'show') {
-            show.className += 'hide';
-        } else {
-            show.className = 'show';
-        }
+        var nav = document.getElementById('nav');
+        nav.classList.toggle('hide');
     });
-
-    //https://www.sitepoint.com/community/t/a-simple-vanilla-js-menu-toggle/285165/13
-
-
-    // showMenu = function(){
-    //     document.getElementById('caption').innerText= 'fucking hell it works'
-    // }
+    //close nav on click
+    var closeNav = document.getElementById('navUl').addEventListener('click', function () {
+        var nav = document.getElementById('nav');
+        nav.classList.add('hide');
+    });
+    // change navbar when scrolling occurs
+    window.addEventListener('scroll', function () {
+        var navWrap = document.getElementById('navWrap');
+        navWrap.classList.remove('temporary');
+    });
 };
-
-//     showMenu = function(){
-//         var x = document.getElementById("nav");
-//         if (x.className === "mainNav") {
-//             x.className += "responsive";
-//         } else {
-//             x.className = "MainNav";
-//         }
-//     }
-// }
-
-
-// function myFunction() {
-//     var x = document.getElementById("myTopnav");
-//     if (x.className === "topnav") {
-//         x.className += " responsive";
-//     } else {
-//         x.className = "topnav";
-//     }
-// }
+//https://stackoverflow.com/questions/14389687/window-scroll-in-vanilla-javascript
+//https://www.youtube.com/watch?v=bW8dIe2de_c
 },{}],"scripts/smooth.js":[function(require,module,exports) {
 
 var html, body;
@@ -220,7 +188,7 @@ function scroll(from, to, hash) {
     }
   }, timeInterval);
 }
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -250,7 +218,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -281,25 +249,20 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.css":[function(require,module,exports) {
+},{"./bundle-url":"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.css":[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"_css_loader":"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 'use strict';
-
-var _temp = require('./scripts/temp.js');
 
 var _navbar = require('./scripts/navbar.js');
 
-// require('./scripts/temp.js')
 require('./scripts/smooth.js');
-// require('./scripts/navbar.js')
 require('./index.css');
-(0, _temp.addText)();
 (0, _navbar.myFunction)();
-},{"./scripts/temp.js":"scripts/temp.js","./scripts/navbar.js":"scripts/navbar.js","./scripts/smooth.js":"scripts/smooth.js","./index.css":"index.css"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./scripts/navbar.js":"scripts/navbar.js","./scripts/smooth.js":"scripts/smooth.js","./index.css":"index.css"}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -328,7 +291,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '34443' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '37967' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -469,5 +432,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/src.84c7f2bd.map

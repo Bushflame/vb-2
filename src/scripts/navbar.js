@@ -1,43 +1,20 @@
 
     export const myFunction = () => {
         const menuIcon = document.getElementById('openMenu').addEventListener("click", function(){
-             let show = document.getElementById('caption')
-             if(show.className === 'show'){
-                 show.className += 'hide';
-             }else {
-                 show.className = 'show'
-             }
-
+            let nav = document.getElementById('nav');
+            nav.classList.toggle('hide')
         });
-
-//https://www.sitepoint.com/community/t/a-simple-vanilla-js-menu-toggle/285165/13
-
-
-
-        // showMenu = function(){
-        //     document.getElementById('caption').innerText= 'fucking hell it works'
-        // }
+        //close nav on click
+        const closeNav = document.getElementById('navUl').addEventListener('click',
+        function(){
+            let nav = document.getElementById('nav')
+            nav.classList.add('hide')
+        });
+        // change navbar when scrolling occurs
+        window.addEventListener ('scroll', function() {
+                let navWrap = document.getElementById('navWrap');
+                navWrap.classList.remove('temporary')
+        });
     }
- 
-
-//     showMenu = function(){
-//         var x = document.getElementById("nav");
-//         if (x.className === "mainNav") {
-//             x.className += "responsive";
-//         } else {
-//             x.className = "MainNav";
-//         }
-//     }
-// }
-
-
-
-
-// function myFunction() {
-//     var x = document.getElementById("myTopnav");
-//     if (x.className === "topnav") {
-//         x.className += " responsive";
-//     } else {
-//         x.className = "topnav";
-//     }
-// }
+//https://stackoverflow.com/questions/14389687/window-scroll-in-vanilla-javascript
+//https://www.youtube.com/watch?v=bW8dIe2de_c
