@@ -109,24 +109,31 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+// toggle the nav using the burger
 var myFunction = exports.myFunction = function myFunction() {
     var menuIcon = document.getElementById('openMenu').addEventListener("click", function () {
         var nav = document.getElementById('nav');
         nav.classList.toggle('hide');
     });
-    //close nav on click
+    //close nav on clicking anywhere on the nav
     var closeNav = document.getElementById('navUl').addEventListener('click', function () {
         var nav = document.getElementById('nav');
         nav.classList.add('hide');
     });
-    // change navbar when scrolling occurs
+    // // change navbar when scrolling occurs
+
+    var navWrap = document.getElementById('navWrap');
     window.addEventListener('scroll', function () {
-        var navWrap = document.getElementById('navWrap');
-        navWrap.classList.remove('temporary');
+        if (window.pageYOffset > 300) {
+            navWrap.classList.add('small');
+        } else {
+            navWrap.classList.remove('small');
+        }
     });
 };
 //https://stackoverflow.com/questions/14389687/window-scroll-in-vanilla-javascript
 //https://www.youtube.com/watch?v=bW8dIe2de_c
+//https://codepen.io/jessicamarcus/pen/EvmRMg
 },{}],"scripts/smooth.js":[function(require,module,exports) {
 
 var html, body;
@@ -188,7 +195,7 @@ function scroll(from, to, hash) {
     }
   }, timeInterval);
 }
-},{}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -218,7 +225,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -249,12 +256,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.css":[function(require,module,exports) {
+},{"./bundle-url":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.css":[function(require,module,exports) {
 
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
 var _navbar = require('./scripts/navbar.js');
@@ -262,7 +269,7 @@ var _navbar = require('./scripts/navbar.js');
 require('./scripts/smooth.js');
 require('./index.css');
 (0, _navbar.myFunction)();
-},{"./scripts/navbar.js":"scripts/navbar.js","./scripts/smooth.js":"scripts/smooth.js","./index.css":"index.css"}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./scripts/navbar.js":"scripts/navbar.js","./scripts/smooth.js":"scripts/smooth.js","./index.css":"index.css"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -291,7 +298,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '37967' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '42527' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -432,5 +439,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/src.84c7f2bd.map

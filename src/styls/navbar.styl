@@ -1,28 +1,68 @@
+
 .navWrap
+  padding 0
   position fixed
   width 100%
-  background skyblue
+  background transparent
   height 3rem
+  transition all 600ms ease-in-out
+  ul 
+    li  
+      a  
+        color red
+        font-size 2rem 
+
+ @media(min-width:780px)
+  .navWrap
+    padding 2rem 4rem
+    position fixed
+    width 100%
+    background transparent
+    height 3rem
+    transition all 600ms ease-in-out
+    ul 
+      li  
+        a  
+          color #fff
+          font-size 2rem 
+ 
+  .small
+    background #fff
+    padding 0
+
+    ul 
+      li  
+        a  
+          color silver
+          font-size 1.1rem 
 
 .liner
   display flex
   justify-content space-between
+  background skyblue
   height 100%
   align-items center
   margin auto
-  max-width 800px
+  width 100%
+  @media(min-width:780px)
+    background transparent
+    max-width 80%
   .mainNav
 
-    @media (min-width: 720px)
-      opacity 1
+    @media (min-width: 780px)
       display block
       ul
         li
           display inline-block
           padding 0 .3rem
-          a
-            color #fff
+          a          
             text-decoration none
+.logoWrap
+    z-index 999
+    font-size 1.5rem
+    padding .3rem
+    border 1px solid black
+ 
 
 .menuIcon
   border-radius:.2rem;
@@ -31,7 +71,9 @@
   position:absolute;
   top:.6rem;
   right:.6rem;
-  @media (min-width: 720px)
+  z-index 999
+
+  @media (min-width: 780px)
      display none
 
 .icon-bar
@@ -40,12 +82,12 @@
   margin: .3rem auto;
   width:85%;
 
-@media(max-width:720px)
+@media(max-width:780px)
     .show
-      opacity 1
       display block
       position fixed
-      top 3rem
+      padding-top 3rem
+      top 0
       left 0
       width 100%
       background skyblue
@@ -55,22 +97,11 @@
               a
                   text-decoration none
                   font-size 1.1rem
-                  color #fff
+                  
                   padding-top 2rem
 
 
 .hide
   display none
 
-  // .visible
-  //   background:$special;
-  //   color:#fff;
-  //   display:block;
-	// text-align:right;
-	// float:right;
-	// margin:0;
-	// padding-top:2rem;
-	// width:100%;
-.temporary
-    background transparent
-    margin-top 2rem
+
