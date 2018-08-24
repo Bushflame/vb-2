@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "stylus": "stylus -u nib -w src/index.styl -o src/index.css",
+    "stylus": "stylus -u nib -u rupture -w src/index.styl -o src/index.css",
     "parcels": "parcel src/index.html",
     "start": "npm run parcels & npm run stylus"
   },
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "cssnano": "^4.0.5",
-    "nib": "^1.1.2"
+    "nib": "^1.1.2",
+    "rupture": "^0.7.1"
   }
 }
