@@ -1,0 +1,34 @@
+#section-2 
+    header 
+
+    article
+        display flex
+        flex-direction row
+        flex-wrap wrap 
+        max-width 1280px
+        margin auto
+    .item
+        display flex
+        align-items center
+        justify-content center
+        text-align center
+        height 12rem
+        font-size 2rem
+        width 100%
+        +above(690px)
+            width 50%
+
+        +above(960px)
+            width 33.33%
+        i  
+            font-size 4rem
+            margin auto
+    .item:nth-child(odd)
+        background $val
+        color  complement($val)
+    .item:nth-child(even)
+        background complement($val)
+        color $val
+ 
+
+

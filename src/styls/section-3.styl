@@ -1,0 +1,31 @@
+.gallery
+    max-width 720px
+    margin auto
+    border 3px solid #fff
+    background #fff
+.main-img
+.main-img img
+    width 100%
+.imgs .box
+    width 100%
+.imgs img
+    width 100%
+
+.imgs
+    display grid
+    grid-template-columns repeat(4,1fr)
+    grid-gap 5px
+
+@keyframes fadeIn {
+  to {
+    opacity: 1
+  }
+}
+.fade-in {
+    opacity 0
+    animation fadeIn 0.5s ease-in 1 forwards
+}
+.text
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    width: 100%

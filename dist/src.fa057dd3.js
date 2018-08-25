@@ -145,6 +145,43 @@ var navbar = exports.navbar = function navbar() {
 //https://stackoverflow.com/questions/14389687/window-scroll-in-vanilla-javascript
 //https://www.youtube.com/watch?v=bW8dIe2de_c
 //https://codepen.io/jessicamarcus/pen/EvmRMg
+},{}],"scripts/gallery.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var gallery = exports.gallery = function gallery() {
+    var current = document.querySelector('#current');
+    // the images are a list to be iterated over
+    var imgs = document.querySelectorAll('.imgs img');
+    // set opacity of thumbnails
+    var opacity = 0.4;
+    //set first img Opacity
+    imgs[0].style.opacity = opacity;
+    imgs.forEach(function (img) {
+        return img.addEventListener('click', imgClick);
+    });
+
+    function imgClick(e) {
+        //reset opacity
+        imgs.forEach(function (img) {
+            return img.style.opacity = 1;
+        });
+
+        //change image to clicked
+        current.src = e.target.src;
+        // e.target.text.classList.add('show')
+        //add fade in class
+        current.classList.add('fade-in');
+        // remove fadin class after .5s
+        setTimeout(function () {
+            return current.classList.remove('fade-in');
+        }, 500);
+        // change opacity
+        e.target.style.opacity = opacity;
+    }
+};
 },{}],"scripts/smooth.js":[function(require,module,exports) {
 
 var html, body;
@@ -277,10 +314,13 @@ module.hot.accept(reloadCSS);
 
 var _navbar = require('./scripts/navbar.js');
 
+var _gallery = require('./scripts/gallery.js');
+
 require('./scripts/smooth.js');
 require('./index.css');
 (0, _navbar.navbar)();
-},{"./scripts/navbar.js":"scripts/navbar.js","./scripts/smooth.js":"scripts/smooth.js","./index.css":"index.css"}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _gallery.gallery)();
+},{"./scripts/navbar.js":"scripts/navbar.js","./scripts/gallery.js":"scripts/gallery.js","./scripts/smooth.js":"scripts/smooth.js","./index.css":"index.css"}],"../../../.nvm/versions/node/v10.6.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -309,7 +349,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '42759' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '43187' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

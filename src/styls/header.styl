@@ -1,0 +1,37 @@
+#home 
+  background linear-gradient(left,complement($val), $val)
+  padding-top 4rem
+.wrapper
+  display flex
+  justify-content: space-between;
+  align-items center
+  height 100%
+  flex-direction row
+  flex-wrap wrap
+  max-width 1200px
+  margin 0 auto
+  padding 0
+
+.site-intro
+    width 100%
+    padding-left 1rem
+    margin 2rem 0
+    +below(850px)
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+        text-align center
+    +above(860px)
+      width 50%
+.site-img
+    width 80%
+    align-self flex-end
+    +above(860px)
+      width 45%
+
+.intro-ul
+    margin 2rem
+    font-size 1.2rem
+    list-style none
+    color $val

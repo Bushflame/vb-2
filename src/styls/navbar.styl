@@ -10,11 +10,11 @@
     li
       a
         color #fff
-        font-size 2rem
+        font-size 1.3rem
 
  @media(min-width:780px)
   .navWrap
-    padding 3rem 4rem
+    padding 3rem 0
     position fixed
     width 100%
     background transparent
@@ -24,22 +24,22 @@
       li
         a
           color #fff
-          font-size 2rem
+          font-size 1.3rem
 
   .small
-    background rgba(0,0,0,0.5)
+    background complement($val)
     padding 1rem 0
 
     ul
       li
         a
-          color #000
+          color $val
           font-size 1.2rem
 
 .liner
   display flex
   justify-content space-between
-  background grey
+  background #fff
   height 100%
   align-items center
   margin auto
@@ -59,15 +59,18 @@
             text-decoration none
 .logoWrap
     z-index 999
-    font-size 1.5rem
+    font-size 1.2rem
     padding .3rem
-    border 1px solid black
-
+.inner 
+  display flex
+  flex-direction row
+  align-items center
+  color $val
 
 .menuIcon
   border-radius:.2rem;
   width:2.4rem;
-  border:.05rem solid #fff;
+  border:.05rem solid $special;
   position:absolute;
   top:.6rem;
   right:.6rem;
@@ -78,7 +81,7 @@
 
 .icon-bar
   height: .3rem;
-  background-color: #fff;
+  background-color: $special;
   margin: .3rem auto;
   width:85%;
 
@@ -90,13 +93,15 @@
       top 0
       left 0
       width 100%
-      background grey
+      background #fff
       ul
           li
               padding-bottom 1rem
               a
                   text-decoration none
                   font-size 1.1rem
+                  color $special
+                  padding-left 1rem
 
 
 

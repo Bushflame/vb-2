@@ -5,96 +5,221 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i" rel="stylesheet">
 </head>
 <body>
 
-  <header role='presentation' class='navWrap' id='navWrap'>
+    <header role='presentation' class='navWrap' id='navWrap'>
+        <div class="liner">
+            <div class="logoWrap">
+                <div class="inner">
+                    <embed class='nav-logo' src="img/logo.svg">                   
+                    <p>Tel: 01709 889184<br/>info@vbirdconstruction.co.uk</p>
+                </div>
+            </div>
+            <div class="menuIcon" id='openMenu'>
+                <div class="icon-bar"></div>
+                <div class="icon-bar"></div>
+                <div class="icon-bar"></div>
+            </div>
+            <nav id='nav' class='mainNav hide show'>
+                <ul class='mainNav__ul' id='navUl'>
+                    <li><a href='#home'>Home</a></li>
+                    <li><a href='#section-1'>Section 1</a></li>
+                    <li><a href='#section-2'>Section 2</a></li>
+                    <li><a href='#section-3'>Section 3</a></li>
+                    <li><a href='#section-4'>Section 4</a></li>
+                    <li><a href='#section-5'>Section 5</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="home">
+        <div class="wrapper">
+            <article class="site-intro">
+                 <embed class='site-logo' src="img/logo.svg">                  
+                 <h1 class="title">Building Contractor</h1>
+                <p class="tagline">Refurbishment & voids, new builds & regeneration projects</p>
 
-    <div class="liner">
-      <div class="logoWrap">
-          <div class="inner">
-            <h3>Logo Here</h3>
-          </div>
-      </div>
+                 <p class="biline">
+                     A family run business with over 20 years experience in building and refurbishment works.
+                </p>
+                 <p class="biline">
+                     Working with both corporate & private clients, providing a high level of service & expertise in carrying out:
+                </p>
+                <ul class='intro-ul'>
+                     <li class='intro__li'>Property refurbishment</li>
+                     <li class='intro__li'>New Build Homes</li>
+                    <li class='intro__li'>Apartment Fitouts</li>
+                    <li class='intro__li'>Property Renovation</li>
+                    <li class='intro__li'>Regeneration & Void Schemes</li>
+                </ul>               
+            </article>
+            <div class="site-img">
+                <img src="./img/worker.png" alt="">
+            </div>           
+        </div>
 
-      <div class="menuIcon" id='openMenu'>
-          <div class="icon-bar"></div>
-          <div class="icon-bar"></div>
-          <div class="icon-bar"></div>
-      </div>
-      <nav id='nav' class='mainNav hide show'>
-          <ul class='mainNav__ul' id='navUl'>
-              <li><a href='#home'>Home</a></li>
-              <li><a href='#section_1'>Section 1</a></li>
-              <li><a href='#section_2'>Section 2</a></li>
-              <li><a href='#section_3'>Section 3</a></li>
-              <li><a href='#section_4'>Section 4</a></li>
-              <li><a href='#section_5'>Section 5</a></li>
-          </ul>
-      </nav>
-  </div>
-</header>
+    </section>
 
-
-  <div class="wrapper" id='home'>
-  <h1 class='site-title'>A Parcel Stylus Boilerplate<br/>c/w</h1>
-  <h2>Smooth scroll navigation</h2>
-  <p class='tagline'>The entire navigation is built using vanilla js. No libraries, such as jquery, are used<br/>
-    The styling is taken care of using the stylus preprocessor</p>
-  </div>
-  <section class="section" id="section_1">
-      <h1 class="title">Section 1 Title</h1>
-      <div class="flext">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-      </div>
+  <section class="section" id="section-1">
+  
+     <article class="majors">
+         <div class="major">
+             <header class='section-header section-1__header'>
+                <h2 class='section-title'><span class='section__title-logo'>
+                <embed class='section-logo' src="img/logo.svg">
+                </span>Major Projects</h2>
+                <hr class='section-hr'/>
+                <p class="section-tagline">From years of experience gained from smaller projects, we can now confidently apply our expertise to much larger projects</p>
+            </header>             
+         </div>
+         <div class="major">
+             <img src="img/regen.jpg" alt="">
+             <div class="major-text">
+                 <h3>Regeneration Projects</h3>
+                 <div class="major-body">We can build your new home to your exact specifications and assist with all planning and architectural aspects.</div>
+             </div>
+         </div>
+         <div class="major">
+            <img src="img/newbuild.jpg" alt="">
+            <div class="major-text">
+                 <h3>3 Private New Builds</h3>
+                 <div class="major-body">We can build your new home to your exact specifications and assist with all planning and architectural aspects.</div>
+            </div>
+        </div>
+        <div class="major">
+             <img src="img/newbuild.jpg" alt="">
+            <div class="major-text">
+                <h3>4 Social Housing</h3>
+                 <div class="major-body">We work with some of the biggest and most respected social housing companies in the UK. Providing continuous maintainenance and major refurbishment</div>
+            </div>
+        </div>
+        <div class="major">
+            <div class="major-img"> <img src="img/unit.jpg" alt=""></div> 
+            <div class="major-text">
+                <h3>5 Commercial Builds</h3>
+                <div class="major-body">Commercial properties, from single factory units to medium sized industiral estates.</div>
+            </div>
+        </div>
+        <div class="major">
+                <div class="major-img"><img src="img/residential.jpg" alt=""></div> 
+            <div class="major-text">
+                <h3>6 Residential Builds</h3>
+                <div class="major-body">We are regularly asked to undertake or assist in major housing projects and are familiar with all health and safety and building regulations</div>
+            </div>
+        </div>      
+     </article> 
     
   </section>
-  <section class="section" id="section_2">
-      <h1 class="title">Section 2 Title</h1>
-      <div class="gridz">
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>
-          <div class="item"></div>          
-      </div>
+  <section class="section" id="section-2">
+      <header>
+        <h2 class='section-title'><span><embed class='section-logo' src="img/logo.svg">
+                    </span>other services</h2>
+                    <hr/>
+          <p>section tagline</p>
+      </header>
+      <article>
+          <div class="item" role='presentation'>
+            <figure>
+                <i class="material-icons sixth__icon">account_balance</i>                
+                <figcaption>Groundworks</figcaption>
+            </figure>
+          </div>
+          <div class="item" role='presentation'>
+            <figure>
+                <i class="material-icons sixth__icon">account_balance</i>                   
+             <figcaption>Driveways</figcaption>
+            </figure>
+          </div>
+          <div class="item" role='presentation'>
+            <figure>
+                <i class="material-icons sixth__icon">account_balance</i>                   
+              <figcaption>Brick & Blockwork</figcaption>
+            </figure>
+          </div>
+          <div class="item" role='presentation'>
+                <figure>
+                    <i class="material-icons sixth__icon">account_balance</i>                
+                    <figcaption>Refurbishments</figcaption>
+                </figure>
+              </div>
+              <div class="item" role='presentation'>
+                <figure>
+                    <i class="material-icons sixth__icon">account_balance</i>                   
+                 <figcaption>Domestic & Commercial Newbuilds</figcaption>
+                </figure>
+              </div>
+              <div class="item" role='presentation'>
+                <figure>
+                    <i class="material-icons sixth__icon">account_balance</i>                   
+                  <figcaption>Government Funded Energy Schemes</figcaption>
+                </figure>
+              </div>
+
+
+
+
+
+
+      </article>
+
 
   </section>
-  <section class="section" id="section_3">
-      <h1 class="title">Section 3 Title</h1>
+  <section class="section" id="section-3">
+        <header>
+            <h2 class='section-title'><span><embed class='section-logo' src="img/logo.svg">
+                            </span>gallery</h2>
+                            <hr/>
+            <p>a glance at some of our completed and ongoing projects</p>
+        </header>
+
+      <div class="gallery">
+            <div class="main-img">
+                <img src="img/img1.jpg" id='current'  alt="">
+            </div>
+            <div class="imgs">
+                <img src="img/img1.jpg" >
+                <img src="img/img2.jpg" >
+                <img src="img/img3.jpg" id='' alt="">
+                <img src="img/img4.jpg" id='' alt="">
+                <img src="img/img5.jpg" id='' alt="">
+                <img src="img/img6.jpg" id='' alt="">
+                <img src="img/img7.jpg" id='' alt="">
+                <img src="img/img8.jpg" id='' alt="">
+            </div>   
+        </div>
+
+
+
+
 
   </section>
-  <section class="section" id="section_4">
-      <h1 class="title">Section 4 Title</h1>
+  <section class="section" id="section-4">
+        <header>
+             <h2 class='section-title'><span><embed class='section-logo' src="img/logo.svg">
+                                </span>accredition</h2>
+                                <hr/>
+            <p>VB building services are CHAS accredited</p>
+        </header>
+        <article>
 
+          <div class="item" role='presentation'>
+                <img src="img/chas.png" alt="">
+          </div> 
+          <div class="item" role='presentation'>
+                <h3>who are CHAS?</h3> 
+                <p>CHAS are an authorative accredition company that ensures its members comply with the most strignent health and safety legistation. All our members recieve expert advice on safety, efficiency and environmental apsects concerning the construction industry
+
+                        Many organisations insist their contractors are health and safety accredited. CHAS members are automatically approved by over 1000 organisations
+                        
+                        By continually assessing all members, CHAS provide you with the assuarance and high safety standards you're entitled to expect... <a href='https://www.chas.co.uk/'>find out more</a></p>             
+        </div>            
+        </article>
   </section>
-  <section class="section" id="section_5">
+  <section class="section" id="section-5">
       <h1 class="title">Section 5 Title</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   </section>
 

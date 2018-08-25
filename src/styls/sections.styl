@@ -1,0 +1,41 @@
+.section
+    padding 4rem 1rem
+    header  
+        padding 2rem
+        // box-shadow: 10px 10px 42px 9px rgba(128,107,0,1)
+        margin 0 auto 4rem 
+    h2  
+        font-size 4rem 
+        color complement($val)
+        font-weight 300
+        text-align center
+        text-transform uppercase
+        font-family 'Times New Roman'
+        text-shadow 0 0 12px $val
+        +below(600px)
+            font-size 2.5rem
+    h3 
+        font-size 1.4rem
+        color $val 
+        font-weight 300
+        font-family: 'Open Sans Condensed', sans-serif;
+        border-bottom 2px solid complement($val)
+        margin 1rem 0
+        text-transform capitalize
+    p  
+        font-size 1.1rem
+        line-height 1.4
+
+    header p
+        text-align center 
+        font-size 1.6rem
+        color $val
+        text-transform capitalize
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-style italic        
+hr
+  max-width 18rem
+  margin 1rem auto 
+  border 0 
+  height 4px 
+  background linear-gradient(to right, rgba(complement($val), 0.2), rgba($val, 0.75), rgba(complement($val), 0.2))
