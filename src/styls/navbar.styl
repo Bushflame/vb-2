@@ -27,13 +27,13 @@
           font-size 1.3rem
 
   .small
-    background complement($val)
+    background linear-gradient(left,complement($val), $val)
     padding 1rem 0
 
     ul
       li
         a
-          color $val
+          color #fff
           font-size 1.2rem
 
 .liner
@@ -44,12 +44,12 @@
   align-items center
   margin auto
   width 100%
-  @media(min-width:780px)
+  @media(min-width:960px)
     background transparent
     max-width 80%
   .mainNav
 
-    @media (min-width: 780px)
+    @media (min-width: 960px)
       display block
       ul
         li
@@ -59,13 +59,13 @@
             text-decoration none
 .logoWrap
     z-index 999
-    font-size 1.2rem
+    font-size 1.3rem
     padding .3rem
 .inner 
   display flex
   flex-direction row
   align-items center
-  color $val
+  color #fff
 
 .menuIcon
   border-radius:.2rem;
@@ -76,7 +76,7 @@
   right:.6rem;
   z-index 999
 
-  @media (min-width: 780px)
+  @media (min-width: 960px)
      display none
 
 .icon-bar
@@ -85,7 +85,7 @@
   margin: .3rem auto;
   width:85%;
 
-@media(max-width:780px)
+@media(max-width:960px)
     .show
       display block
       position fixed

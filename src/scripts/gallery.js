@@ -5,7 +5,7 @@ export const gallery = () => {
     // set opacity of thumbnails
     const opacity = 0.4;
     //set first img Opacity
-    imgs[0].style.opacity = opacity;
+    // imgs[0].style.opacity = opacity;
     imgs.forEach(img => img.addEventListener('click',imgClick));
     
     function imgClick(e){
@@ -23,3 +23,5 @@ export const gallery = () => {
         e.target.style.opacity = opacity
     }
     };
+
+ 

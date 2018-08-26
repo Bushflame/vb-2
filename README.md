@@ -9,3 +9,6 @@ rupture enables easy media queries
 ## Components
 The flexbox layout in section 1 begins life with 6 rows of 1 column. Then forms 3 rows of 2, before forming 2 rows of 3 on wide screens
 The grid system of section 2 starts out at 8 rows of 1, then 4 rows of 2, and finally 2 rows of 4
+
+#notes
+git remote set-url origin git@github.com:username/projectname.git

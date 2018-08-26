@@ -158,7 +158,7 @@ var gallery = exports.gallery = function gallery() {
     // set opacity of thumbnails
     var opacity = 0.4;
     //set first img Opacity
-    imgs[0].style.opacity = opacity;
+    // imgs[0].style.opacity = opacity;
     imgs.forEach(function (img) {
         return img.addEventListener('click', imgClick);
     });
@@ -349,7 +349,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '43187' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '33697' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

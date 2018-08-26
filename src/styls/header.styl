@@ -1,6 +1,8 @@
 #home 
   background linear-gradient(left,complement($val), $val)
   padding-top 4rem
+  +below(860px)
+    background complement($val)
 .wrapper
   display flex
   justify-content: space-between;
@@ -32,6 +34,6 @@
 
 .intro-ul
     margin 2rem
-    font-size 1.2rem
+    font-size 1.5rem
     list-style none
-    color $val
+    color #fff
