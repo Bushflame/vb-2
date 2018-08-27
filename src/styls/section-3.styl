@@ -1,3 +1,11 @@
+#section-3  
+    background linear-gradient(left, $val,complement($val), $val)
+    header
+        background #fff
+        width 50%
+        min-width 300px
+        border-radius 50%
+        border solid 4px complement($val)
 .gallery
     max-width 720px
     margin auto
@@ -22,6 +30,7 @@
      grid-template-columns repeat(4,1fr)
      grid-template-rows 3
      grid-gap .1rem
+
      div:nth-child(1)
         grid-column 1/5
         grid-row 1
