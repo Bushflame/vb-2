@@ -238,12 +238,63 @@
         </article>
   </section>
   <section class="section" id="section-5">
-      <h1 class="title">Section 5 Title</h1>
+    <header>
+        <h2 class='section-title'><span><embed class='section-logo' src="img/logo.svg">
+                           </span>contact</h2>
+                           <hr/>
+       <p>getting in touch is easy</p>
+   </header>
+   <div class="wrapper">
+       <div class="item details">
+            <div class="detail">
+                <i class="material-icons detail__icon">call</i>
+                <p>Phone: 01709 889184,<br/> Mobile: 07976761639</p>
+            </div>
+             <div class="detail">
+                <i class="material-icons detail__icon">message</i>
+                <p>Email: info@vbirdconstruction.co.uk</p>
+            </div>
+            <div class="detail">
+                <i class="material-icons detail__icon">location_city</i>
+                <p>43 Lancaster St <br/>Thurnscoe<br/> Rotherham S63 0HL</p>
 
+           </div>
+           <form action="submit">
+               <input type="text" name='name' placeholder='Name' required>
+               <input type="text" name='email' placeholder='Email address' required>
+               <textarea name="message" placeholder='Your Message' required rows="4" cols="50"></textarea>
+               <input type="text" name='url' class='antispam'>
+               <input class='submit-btn' type="submit" value="Send Message" />                         
+           </form>
+        </div>
+        <div class="item">
+            <div id="map"></div>   
+        </div> 
+           
+       </div>
   </section>
-
-
-
+  <footer>
+      <p>Copyright VB BUILDING SERVICES (2018)</p>
+      <p>Web Design By <a href="http://www.bushflame.com">BUSHFLAME</a></p>
+      
+  </footer>
+ 
+  <script>
+        function initMap() {
+          var uluru = {lat: 53.5449, lng: -1.31866};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        }
+ </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFPDqzs4tLmffIi4wUlY4XbWy6lDV2M5w&callback=initMap">
+      </script>
 
 
 <script src="./index.js" charset="utf-8"></script>
