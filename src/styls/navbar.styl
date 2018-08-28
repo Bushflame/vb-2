@@ -1,9 +1,12 @@
 
+.sticky
+  position fixed
+  top 0
+  left 0
 .navWrap
   padding 0
-  position fixed
   width 100%
-  background transparent
+  background rgba(complement($val),0.4)
   height 3rem
   transition all 600ms ease-in-out
   z-index 9
@@ -15,16 +18,17 @@
 
  @media(min-width:780px)
   .navWrap
-    padding 3rem 0
-    position fixed
+    padding 2rem 0
     width 100%
-    background transparent
+    background #fff
+    border-top 2px solid complement($val)
+    border-bottom 2px solid complement($val)
     height 3rem
     transition all 600ms ease-in-out
     ul
       li
         a
-          color #fff
+          color $val
           font-size 1.3rem
 
   .small
@@ -66,7 +70,8 @@
   display flex
   flex-direction row
   align-items center
-  color #fff
+  color $val
+  font-weight bold
 
 .menuIcon
   border-radius:.2rem;

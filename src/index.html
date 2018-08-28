@@ -9,6 +9,32 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i" rel="stylesheet">
 </head>
 <body>
+    <section id="home">
+        <div class="wrapper">
+            <article class="site-intro">
+                 <embed class='site-logo' src="img/logo.svg">                  
+                 <h1 class="title">Building Contractor</h1>
+                <p class="tagline">Refurbishment & voids, new builds & regeneration projects</p>
+
+                 <p class="biline">
+                     A family run business with over 20 years experience in building and refurbishment works.
+                </p>
+                 <p class="biline">
+                     Working with both corporate & private clients, providing a high level of service & expertise in carrying out:
+                </p>
+              
+            </article>
+            <div class="site-img">
+                <ul class='intro-ul'>
+                    <li class='intro__li'>Property refurbishment</li>
+                    <li class='intro__li'>New Build Homes</li>
+                   <li class='intro__li'>Apartment Fitouts</li>
+                   <li class='intro__li'>Property Renovation</li>
+                   <li class='intro__li'>Regeneration & Void Schemes</li>
+               </ul> 
+            </div>           
+        </div>
+    </section>
 
     <header role='presentation' class='navWrap' id='navWrap'>
         <div class="liner">
@@ -23,7 +49,7 @@
                 <div class="icon-bar"></div>
                 <div class="icon-bar"></div>
             </div>
-            <nav id='nav' class='mainNav hide show'>
+            <nav id='nav' class='mainNav show'>
                 <ul class='mainNav__ul' id='navUl'>
                     <li><a href='#home'>Home</a></li>
                     <li><a href='#section-1'>Section 1</a></li>
@@ -35,33 +61,6 @@
             </nav>
         </div>
     </header>
-    <section id="home">
-        <div class="wrapper">
-            <article class="site-intro">
-                 <embed class='site-logo' src="img/logo.svg">                  
-                 <h1 class="title">Building Contractor</h1>
-                <p class="tagline">Refurbishment & voids, new builds & regeneration projects</p>
-
-                 <p class="biline">
-                     A family run business with over 20 years experience in building and refurbishment works.
-                </p>
-                 <p class="biline">
-                     Working with both corporate & private clients, providing a high level of service & expertise in carrying out:
-                </p>
-                <ul class='intro-ul'>
-                     <li class='intro__li'>Property refurbishment</li>
-                     <li class='intro__li'>New Build Homes</li>
-                    <li class='intro__li'>Apartment Fitouts</li>
-                    <li class='intro__li'>Property Renovation</li>
-                    <li class='intro__li'>Regeneration & Void Schemes</li>
-                </ul>               
-            </article>
-            <div class="site-img">
-                <img src="./img/worker.png" alt="">
-            </div>           
-        </div>
-
-    </section>
 
   <section class="section" id="section-1">
   
@@ -260,9 +259,9 @@
                 <p>43 Lancaster St <br/>Thurnscoe<br/> Rotherham S63 0HL</p>
 
            </div>
-           <form action="submit">
+           <form action="https://formspree.io/info@vbirdconstruction.com">
                <input type="text" name='name' placeholder='Name' required>
-               <input type="text" name='email' placeholder='Email address' required>
+               <input type="email" name='_replyto' placeholder='Email address' required>
                <textarea name="message" placeholder='Your Message' required rows="4" cols="50"></textarea>
                <input type="text" name='url' class='antispam'>
                <input class='submit-btn' type="submit" value="Send Message" />                         

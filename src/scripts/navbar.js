@@ -10,13 +10,14 @@
             let nav = document.getElementById('nav')
             nav.classList.add('hide')
         });
-        // // change navbar when scrolling begins
+        // change navbar when scrolling begins
         let navWrap = document.getElementById('navWrap');
+        var sticky = navWrap.offsetTop;
         window.addEventListener ('scroll', function() {
-                if(window.pageYOffset > 300) {
-                navWrap.classList.add('small')
+                if(window.pageYOffset >= sticky) {
+                navWrap.classList.add('sticky')
                 }else {
-                    navWrap.classList.remove('small')
+                    navWrap.classList.remove('sticky')
                 }
 
         });
@@ -24,17 +25,17 @@
 
 
 
-        var links = document.getElementsByTagName("a"); // more specific selector if other links
-        for (var i = 0; i < links.length; i++) {
-            var link = links[i];
-            link.onclick = function () {
-                var prev = document.getElementsByClassName("active");
-                if (prev && prev[0]) {
-                    prev[0].className = ""; // if using other classes, filter better
-                }
-                this.className += " active";
-            };
-        }
+        // var links = document.getElementsByTagName("a"); // more specific selector if other links
+        // for (var i = 0; i < links.length; i++) {
+        //     var link = links[i];
+        //     link.onclick = function () {
+        //         var prev = document.getElementsByClassName("active");
+        //         if (prev && prev[0]) {
+        //             prev[0].className = ""; // if using other classes, filter better
+        //         }
+        //         this.className += " active";
+        //     };
+        // }
 
     }
 //https://stackoverflow.com/questions/14389687/window-scroll-in-vanilla-javascript

@@ -1,6 +1,6 @@
 #home 
-  background linear-gradient(left,complement($val), $val)
-  padding-top 4rem
+  background rgba(complement($val),0)
+  padding-top 0
   +below(860px)
     background complement($val)
 .wrapper
@@ -16,8 +16,13 @@
 
 .site-intro
     width 100%
-    padding-left 1rem
+    padding 0 1rem
     margin 2rem 0
+    .biline 
+      color $val
+    .tagline 
+      color complement($val)
+      font-weight bold
     +below(850px)
         display flex
         flex-direction column
@@ -27,13 +32,23 @@
     +above(860px)
       width 50%
 .site-img
-    width 80%
-    align-self flex-end
+    display flex
+    align-items center
+    justify-content center  
+    background-image url('./img/worker.png')
+    background-repeat no-repeat
+    background-size auto
+    background-position center
+    background-color rgba(255,255,255,0.8)
+    background-blend-mode lighten    
     +above(860px)
       width 45%
 
 .intro-ul
-    margin 2rem
+    align-self center
     font-size 1.5rem
     list-style none
-    color #fff
+    color complement($val)
+    font-weight bold
+
+    

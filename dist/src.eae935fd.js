@@ -120,27 +120,28 @@ var navbar = exports.navbar = function navbar() {
         var nav = document.getElementById('nav');
         nav.classList.add('hide');
     });
-    // // change navbar when scrolling begins
+    // change navbar when scrolling begins
     var navWrap = document.getElementById('navWrap');
+    var sticky = navWrap.offsetTop;
     window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 300) {
-            navWrap.classList.add('small');
+        if (window.pageYOffset >= sticky) {
+            navWrap.classList.add('sticky');
         } else {
-            navWrap.classList.remove('small');
+            navWrap.classList.remove('sticky');
         }
     });
 
-    var links = document.getElementsByTagName("a"); // more specific selector if other links
-    for (var i = 0; i < links.length; i++) {
-        var link = links[i];
-        link.onclick = function () {
-            var prev = document.getElementsByClassName("active");
-            if (prev && prev[0]) {
-                prev[0].className = ""; // if using other classes, filter better
-            }
-            this.className += " active";
-        };
-    }
+    // var links = document.getElementsByTagName("a"); // more specific selector if other links
+    // for (var i = 0; i < links.length; i++) {
+    //     var link = links[i];
+    //     link.onclick = function () {
+    //         var prev = document.getElementsByClassName("active");
+    //         if (prev && prev[0]) {
+    //             prev[0].className = ""; // if using other classes, filter better
+    //         }
+    //         this.className += " active";
+    //     };
+    // }
 };
 //https://stackoverflow.com/questions/14389687/window-scroll-in-vanilla-javascript
 //https://www.youtube.com/watch?v=bW8dIe2de_c
@@ -309,7 +310,7 @@ module.exports = reloadCSS;
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"./img/worker.png":[["worker.70636309.png","img/worker.png"],"img/worker.png"],"_css_loader":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 'use strict';
 
 var _navbar = require('./scripts/navbar.js');
@@ -349,7 +350,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '39305' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '38695' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -491,4 +492,4 @@ function hmrAccept(bundle, id) {
   });
 }
 },{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.1aae2281.map
+//# sourceMappingURL=/src.eae935fd.map
