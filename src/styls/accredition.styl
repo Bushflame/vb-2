@@ -1,4 +1,6 @@
-#section-4 
+#accredition
+    background linear-gradient(160deg, #fff, #fff 60%, complement($val) 60%, complement($val)) 
+    background linear-gradient(160deg, rgba(complement($val),.5), rgba(complement($val),.5) 60%, complement($val) 60%, complement($val)) 
     article 
         display flex
         flex-direction row
@@ -7,14 +9,17 @@
         margin auto
         align-items stretch
     .item:nth-child(2)
-        background $val
+        // background complement($val)
         color #fff
         padding 1rem
-        border solid .5rem complement($val)
+
         p
             font-size 1.4rem
+            color #fff
         h3 
             color #fff
+        a  
+            color silver
     .item
         width 100%
         margin auto

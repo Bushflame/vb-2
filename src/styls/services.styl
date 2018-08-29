@@ -1,0 +1,39 @@
+#services
+    background-image url('./img/work.jpg')
+    background-repeat no-repeat
+    background-size cover
+    background-position top
+    background-color rgba(255,255,255,.4)
+    background-blend-mode lighten 
+
+    .item
+
+ 
+    article
+        display grid
+        grid-template-columns 1
+        grid-template-rows 12
+        grid-gap 1rem
+        max-width 1280px
+        margin auto
+        .item 
+            display flex
+            align-items center
+            justify-content center
+            text-align center
+            height 12rem        
+            width 100%
+            background rgba(255,255,255, 0.7)
+            box-shadow 10px 10px 24px rgba(0,0,0,.3)
+        i
+            color complement($val)
+            font-size 4rem
+        figcaption  
+            color $val 
+            font-size 2rem
+        +above(740px)
+            grid-template-columns repeat(2,1fr)
+            grid-template-rows 3
+            grid-gap 2rem
+
+

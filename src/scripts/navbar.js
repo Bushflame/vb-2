@@ -16,8 +16,10 @@
         window.addEventListener ('scroll', function() {
                 if(window.pageYOffset >= sticky) {
                 navWrap.classList.add('sticky')
+                navWrap.classList.remove('static')
                 }else {
                     navWrap.classList.remove('sticky')
+                    // navWrap.classList.add('static')
                 }
 
         });

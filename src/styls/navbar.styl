@@ -3,26 +3,33 @@
   position fixed
   top 0
   left 0
+.static 
+  position static
 .navWrap
-  padding 0
   width 100%
-  background rgba(complement($val),0.4)
-  height 3rem
-  transition all 600ms ease-in-out
-  z-index 9
-  ul
-    li
-      a
-        color #fff
-        font-size 1.3rem
+  border-top 2px solid complement($val)
+  border-bottom 2px solid complement($val)
+  +below(1020px)
+    position fixed
+    top 0
+    left 0
+  +above(1020px)
+    padding 0
+    width 100%
+    height 3rem
+    transition all 600ms ease-in-out
+    z-index 9
+    ul
+      li
+        a
+          color #fff
+          font-size 1.3rem
 
  @media(min-width:780px)
   .navWrap
     padding 2rem 0
     width 100%
     background #fff
-    border-top 2px solid complement($val)
-    border-bottom 2px solid complement($val)
     height 3rem
     transition all 600ms ease-in-out
     ul
@@ -44,14 +51,15 @@
 .liner
   display flex
   justify-content space-between
-  background linear-gradient(left,complement($val), $val)
+  background #fff
   height 100%
   align-items center
+  max-width 1280px
   margin auto
-  width 100%
+  .gap
+    flex 1
   @media(min-width:960px)
-    background transparent
-    max-width 80%
+    max-width 1280px
   .mainNav
 
     @media (min-width: 960px)
@@ -76,7 +84,7 @@
 .menuIcon
   border-radius:.2rem;
   width:2.4rem;
-  border:.05rem solid $special;
+  border:.05rem solid $val;
   position:absolute;
   top:.6rem;
   right:.6rem;
@@ -87,7 +95,7 @@
 
 .icon-bar
   height: .3rem;
-  background-color: $special;
+  background-color: $val;
   margin: .3rem auto;
   width:85%;
 
@@ -101,16 +109,22 @@
       top 0
       left 0
       width 100%
-      background linear-gradient(left,complement($val), $val)
-
+      background #fff
+      z-index 9
       ul
+          width 100%
+          padding-top 2rem
+          
           li
               padding-bottom 1rem
+              width 100%
+              text-align center
               a
                   text-decoration none
                   font-size 1.1rem
-                  color #fff
-                  padding-left 1rem
+                  color $val
+                  text-align center
+                  margin auto
     .hide
       // display none
       opacity 0

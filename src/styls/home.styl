@@ -1,8 +1,8 @@
 #home 
-  background rgba(complement($val),0)
+  background #fff
   padding-top 0
   +below(860px)
-    background complement($val)
+    background #fff
 .wrapper
   display flex
   justify-content: space-between;
@@ -17,35 +17,39 @@
 .site-intro
     width 100%
     padding 0 1rem
-    margin 2rem 0
+    margin 4rem 0 2rem
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    text-align center    
     .biline 
       color $val
     .tagline 
       color complement($val)
       font-weight bold
-    +below(850px)
-        display flex
-        flex-direction column
-        justify-content center
-        align-items center
-        text-align center
-    +above(860px)
+
+    +above(1020px)
       width 50%
 .site-img
     display flex
-    align-items center
-    justify-content center  
+    align-items flex-start
+    justify-content center
+    text-align center
+    min-height 230px
+    width 100%  
     background-image url('./img/worker.png')
     background-repeat no-repeat
     background-size auto
     background-position center
     background-color rgba(255,255,255,0.8)
     background-blend-mode lighten    
-    +above(860px)
+    +above(1020px)
       width 45%
+      align-items center
+      align-self flex-end
 
 .intro-ul
-    align-self center
     font-size 1.5rem
     list-style none
     color complement($val)
