@@ -159,8 +159,6 @@
   justify-content: center;
   text-align: center;
   background: rgba(255,255,255,0.3);
-  -webkit-box-shadow: 0 0 8px rgba(128,107,0,0.5);
-  box-shadow: 0 0 8px rgba(128,107,0,0.5);
   margin: 1rem 0;
 }
 .wrapper .detail i {
@@ -228,6 +226,7 @@
   margin-bottom: 1rem;
   -webkit-box-shadow: 0 0 8px rgba(128,107,0,0.5);
   box-shadow: 0 0 8px rgba(128,107,0,0.5);
+  border: none;
   background: rgba(255,255,255,0.6);
 }
 .wrapper form .submit-btn {
@@ -656,8 +655,8 @@ img {
 }
 .navWrap {
   width: 100%;
-  border-top: 2px solid #806b00;
-  border-bottom: 2px solid #806b00;
+  border-top: 1px solid #806b00;
+  border-bottom: 1px solid #806b00;
 }
 @media only screen and (max-width: 1020px) {
   .navWrap {
@@ -956,7 +955,7 @@ img {
   width: 28%;
 }
 .section {
-  padding: 4rem 1rem;
+  padding: 4rem 0;
 }
 .section header {
   padding: 2rem;
@@ -987,6 +986,7 @@ img {
 .section p {
   font-size: 1.1rem;
   line-height: 1.4;
+  padding: 0.5rem 1rem;
 }
 .section header p {
   text-align: center;
@@ -1008,16 +1008,20 @@ hr {
   background: linear-gradient(to right, rgba(128,107,0,0.2), rgba(0,21,128,0.75), rgba(128,107,0,0.2));
 }
 #services {
-  background-image: url("./img/work.jpg");
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  background-position: top;
-  background-color: rgba(255,255,255,0.4);
-  background-blend-mode: lighten;
+  background: rgba(128,107,0,0.5);
 }
-#services .item,
+@media only screen and (min-width: 740px) {
+  #services {
+    background-image: url("./img/work.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-position: top;
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+  }
+}
 #services article {
   display: grid;
   grid-template-columns: 1;
@@ -1025,8 +1029,8 @@ hr {
   grid-gap: 1rem;
   max-width: 1280px;
   margin: auto;
+  padding: 0 1rem;
 }
-#services .item .item,
 #services article .item {
   display: -webkit-box;
   display: -moz-box;
@@ -1053,18 +1057,15 @@ hr {
   -webkit-box-shadow: 10px 10px 24px rgba(0,0,0,0.3);
   box-shadow: 10px 10px 24px rgba(0,0,0,0.3);
 }
-#services .item i,
 #services article i {
   color: #806b00;
   font-size: 4rem;
 }
-#services .item figcaption,
 #services article figcaption {
   color: #001580;
   font-size: 2rem;
 }
 @media only screen and (min-width: 740px) {
-  #services .item,
   #services article {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 3;

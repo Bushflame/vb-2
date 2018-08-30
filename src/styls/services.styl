@@ -1,14 +1,13 @@
 #services
-    background-image url('./img/work.jpg')
-    background-repeat no-repeat
-    background-size cover
-    background-position top
-    background-color rgba(255,255,255,.4)
-    background-blend-mode lighten 
+    background rgba(complement($val),.5)
+    +above(740px)
+        background-image url('./img/work.jpg')
+        background-repeat no-repeat
+        background-size cover
+        background-position top
+        background-color rgba(255,255,255,.6)
+        background-blend-mode lighten 
 
-    .item
-
- 
     article
         display grid
         grid-template-columns 1
@@ -16,6 +15,7 @@
         grid-gap 1rem
         max-width 1280px
         margin auto
+        padding 0 1rem
         .item 
             display flex
             align-items center
